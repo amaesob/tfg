@@ -387,14 +387,14 @@ sudo apt update
 sudo apt install snmp snmp-mibs-downloader
 sudo nano /etc/snmp/snmp.conf (aplicar los cambios del archivo del repositorio)
 
-## Uso de scripts
-# Instalación de Python3
+# Uso de scripts
+## Instalación de Python3
 sudo apt-get install python3
-# Instalación de paquetes
+## Instalación de paquetes
 pip install kubernetes
 pip install prometheus-client
 pip install pysnmp
 pip install asciichartpy
 
-# Uso del script
+## Uso del script
 python3 <<archivo .py>>
