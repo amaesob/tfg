@@ -313,7 +313,7 @@ export PATH=$PATH:$(go env GOPATH)/bin<br>
 
 ### Despliegue de cluster
 kne deploy kne/deploy/kne/kubeadm.yaml (emplear el del repositorio)<br>
-
+Anotar token y hash del log generado al finalizar el comando para añadir nodos al cluster
 ### Uso de cluster:
 mkdir -p $HOME/.kube<br>
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config<br>
@@ -337,7 +337,7 @@ git clone https://github.com/k8snetworkplumbingwg/multus-cni.git && cd multus-cn
 cat ./deployments/multus-daemonset.yml |kubectl apply -f -<br>
 
 ## Agregación de nodos al cluster (desde nodos worker)
-kubeadm join 192.168.1.100:6443 --token <<TOKEN>> --discovery-token-ca-cert-hash sha256:<<HASH>> --cri-socket unix:///var/run/cri-dockerd.sock<br>
+kubeadm join 192.168.1.100:6443 --token (TOKEN) --discovery-token-ca-cert-hash sha256:(HASH) --cri-socket unix:///var/run/cri-dockerd.sock<br>
 
 # Creación y uso de topología
 ## Instalación imagen router arista ceos
