@@ -319,6 +319,21 @@ mkdir -p $HOME/.kube<br>
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config<br>
 sudo chown $(id -u):$(id -g) $HOME/.kube/config<br>
 
+### Limpiar datos de CNI
+kubeadm reset
+systemctl stop kubelet
+systemctl stop docker
+rm -rf /var/lib/cni/
+rm -rf /var/lib/kubelet/*
+rm -rf /etc/cni/
+ifconfig cni0 down
+ifconfig flannel.1 down
+ifconfig docker0 down
+ip link delete cni0
+ip link delete flannel.1
+systemctl start kubelet
+systemctl start docker
+
 ### Clúster K8
 
 kubectl config view<br>
