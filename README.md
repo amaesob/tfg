@@ -11,9 +11,9 @@ Memoria nodo worker: >10GB<br>
 CPUs virtuales master: 2<br>
 CPUs virtuales worker: 8<br>
 
-Adaptador 1: e<br>
-	Conectado a: Adaptador puente<br>
-	Modo promiscuo: Permitir todo<br>
+Adaptador 1:<br>
+	&nbsp;Conectado a: Adaptador puente<br>
+	&nbsp;Modo promiscuo: Permitir todo<br>
 
 ### Habilitar virtualización anidada (en carpeta de instalacion de Vbox para windows) 
  
@@ -41,14 +41,14 @@ sudo apt install -y nano net-tools git make gcc apt-transport-https ca-certifica
 sudo nano /etc/netplan/00-installer-config-yaml<br>
 
 network:<br>
- ethernets:<br>
-  enp0s3:<br>
-   addresses: [192.168.1.100/24]<br>
-    nameservers:<br>
-     addresses: [8.8.8.8]<br>
-     routes:<br>
-      to: default<br>
-      via: 192.168.1.1<br>
+ &nbsp;ethernets:<br>
+  &nbsp;&nbsp;enp0s3:<br>
+   &nbsp;&nbsp;&nbsp;addresses: [192.168.1.100/24]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;nameservers:<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addresses: [8.8.8.8]<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;routes:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;to: default<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;via: 192.168.1.1<br>
 version: 2<br>
 
 sudo netplan apply<br>
@@ -136,15 +136,15 @@ sudo apt install -y nano net-tools git make gcc apt-transport-https ca-certifica
 
 /etc/netplan/00-installer-config-yaml<br>
 network:<br>
-	ethernets:<br>
-		enp0s3:<br>
-			addresses: [192.168.1.111/24]<br>
-			nameservers:<br>
-				addresses: [8.8.8.8]<br>
-			routes:<br>
+	&nbsp;ethernets:<br>
+		&nbsp;&nbsp;enp0s3:<br>
+			&nbsp;&nbsp;&nbsp;addresses: [192.168.1.111/24]<br>
+			&nbsp;&nbsp;&nbsp;nameservers:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;addresses: [8.8.8.8]<br>
+			&nbsp;&nbsp;&nbsp;routes:<br>
 -	to: default<br>
-	via: 192.168.1.1<br>
-	version: 2<br>
+	&nbsp;&nbsp;via: 192.168.1.1<br>
+	&nbsp;&nbsp;version: 2<br>
 
 sudo netplan apply<br>
 
@@ -225,15 +225,15 @@ sudo apt install -y nano net-tools git make gcc apt-transport-https ca-certifica
 
 /etc/netplan/00-installer-config-yaml<br>
 network:<br>
-	ethernets:<br>
-		enp0s3:<br>
-			addresses: [192.168.1.222/24]<br>
-			nameservers:<br>
-				addresses: [8.8.8.8]<br>
-			routes:<br>
--	to: default<br>
-	via: 192.168.1.1<br>
-	version: 2<br>
+	&nbsp;ethernets:<br>
+		&nbsp;&nbsp;enp0s3:<br>
+			&nbsp;&nbsp;&nbsp;addresses: [192.168.1.222/24]<br>
+			&nbsp;&nbsp;&nbsp;nameservers:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;addresses: [8.8.8.8]<br>
+			&nbsp;&nbsp;&nbsp;routes:<br>
+-&nbsp;to: default<br>
+	&nbsp;&nbsp;via: 192.168.1.1<br>
+	&nbsp;&nbsp;version: 2<br>
 
 sudo netplan apply<br>
 
