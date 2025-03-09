@@ -334,17 +334,6 @@ ip link delete flannel.1
 systemctl start kubelet
 systemctl start docker
 
-### Clúster K8
-
-kubectl config view<br>
-kubectl get nodes<br>
-kubectl get pod –all-namespaces<br>
-kubectl get pod –n <<nombre topología>><br>
-<br>
-kubectl describe nodes <br>
-kubectl describe pod –A<br>
-kubectl get namespaces<br>
-
 ### Instalación de Flannel (CLI):
 kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml<br>
 ### Instalación de Multus-cni:
@@ -355,8 +344,7 @@ cat ./deployments/multus-daemonset.yml |kubectl apply -f -<br>
 kubeadm join 192.168.1.100:6443 --token (TOKEN) --discovery-token-ca-cert-hash sha256:(HASH) --cri-socket unix:///var/run/cri-dockerd.sock<br>
 
 # Creación y uso de topología
-## Instalación imagen router arista ceos
-docker import cEOS-lab-4.29.2F.tar ceos (tar en el repositorio)  <br>
+
 
 ## Crear Topología
 kne create examples/arista/ceos/2ceos/2ceos.yaml (copiar carpeta 2ceos del repositorio a la ruta kne/arista/ceos)<br>
